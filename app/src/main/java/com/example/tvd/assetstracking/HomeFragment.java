@@ -22,6 +22,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         addassets = view.findViewById(R.id.img_add_asset);
         addassets.setOnClickListener(this);
+
         return  view;
     }
 
@@ -30,7 +31,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         switch (view.getId())
         {
             case R.id.img_add_asset:
-               getFragmentManager().beginTransaction().replace(R.id.content_frame, new addassets_fragment()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.content_frame, new addassets_fragment()).commit();
                 break;
         }
     }
