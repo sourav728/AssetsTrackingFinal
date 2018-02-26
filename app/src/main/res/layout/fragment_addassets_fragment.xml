@@ -128,13 +128,23 @@
                 android:textStyle="bold"
                 android:textColor="#212121"
                 android:text="Category"/>
-            <EditText
-                android:padding="9dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rectangle_edittext"/>
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_weight="1"
+                    android:padding="9dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_edittext"/>
+                <Spinner
+                    android:id="@+id/spin_category"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="10dp"

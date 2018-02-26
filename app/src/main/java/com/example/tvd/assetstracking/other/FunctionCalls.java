@@ -6,10 +6,6 @@ import android.widget.Toast;
 
 import java.io.File;
 
-/**
- * Created by TVD on 2/26/2018.
- */
-
 public class FunctionCalls {
     public void logStatus(String msg) {
         Log.d("debug", msg);

@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity
 
     private boolean doubleBackToExitPressedOnce = false;
     private static AppCompatActivity thisActivity;
+    Database database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Database database = new Database(this);
+        database = new Database(this);
         database.open();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -54,6 +55,10 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    public Database getassetDatabase()
+    {
+        return this.database;
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
