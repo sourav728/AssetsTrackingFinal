@@ -22,6 +22,7 @@
                 android:textColor="#212121"
                 android:text="Item Name"/>
             <EditText
+                android:id="@+id/edit_itemname"
                 android:padding="9dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -43,6 +44,7 @@
                 android:textColor="#212121"
                 android:text="Product Id"/>
             <EditText
+                android:id="@+id/edit_productid"
                 android:padding="9dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -64,6 +66,7 @@
                 android:textColor="#212121"
                 android:text="Brand"/>
             <EditText
+                android:id="@+id/edit_brand"
                 android:padding="9dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -85,6 +88,7 @@
                 android:textColor="#212121"
                 android:text="Date"/>
             <EditText
+                android:id="@+id/edit_date"
                 android:padding="9dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -108,6 +112,7 @@
                 android:textColor="#212121"
                 android:text="Details"/>
             <EditText
+                android:id="@+id/edit_details"
                 android:padding="9dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -131,15 +136,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <EditText
-                    android:layout_weight="1"
+                <Spinner
                     android:padding="9dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rectangle_edittext"/>
-                <Spinner
+                    android:background="@drawable/rectangle_edittext"
                     android:id="@+id/spin_category"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
@@ -160,6 +161,7 @@
                 android:textColor="#212121"
                 android:text="Company"/>
             <EditText
+                android:id="@+id/edit_company"
                 android:padding="9dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -194,6 +196,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
+                android:id="@+id/edit_price"
+                android:inputType="number"
                 android:padding="9dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="10dp"
@@ -202,6 +206,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/rectangle_edittext"/>
             <EditText
+                android:id="@+id/edit_qty"
+                android:inputType="number"
                 android:padding="9dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="10dp"
@@ -224,6 +230,7 @@
                 android:textColor="#212121"
                 android:text="Location"/>
             <EditText
+                android:id="@+id/edit_location"
                 android:padding="9dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -242,6 +249,7 @@
             android:drawableRight="@drawable/ic_camera"
             android:background="@drawable/rectangle_edittext"/>
         <Button
+            android:id="@+id/btn_save"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:layout_width="100dp"

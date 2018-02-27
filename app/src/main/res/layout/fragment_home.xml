@@ -28,6 +28,7 @@
                 android:layout_height="100dp"
                 />
             <ImageView
+                android:id="@+id/img_edit_asset"
                 android:layout_width="98dp"
                 android:layout_height="100dp"
                 android:tint="@color/colorAccent"

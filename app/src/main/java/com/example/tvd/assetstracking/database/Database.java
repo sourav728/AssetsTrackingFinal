@@ -1,6 +1,8 @@
 package com.example.tvd.assetstracking.database;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -17,15 +19,15 @@ public class Database {
     private File databasefile = null;
     private FunctionCalls functionCalls = new FunctionCalls();
     public Database(Context context) {
-       try {
-           databasefile = functionCalls.filestorepath(databasefolder,database_name);
-           databasepath = functionCalls.filepath(databasefolder) + File.separator + database_name;
-           mh = new MyHelper(context, databasepath, null, 1);
-       }
-       catch (Exception e)
-       {
-           e.printStackTrace();
-       }
+        try {
+            databasefile = functionCalls.filestorepath(databasefolder,database_name);
+            databasepath = functionCalls.filepath(databasefolder) + File.separator + database_name;
+            mh = new MyHelper(context, databasepath, null, 1);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void open() {
@@ -54,16 +56,14 @@ public class Database {
 
         }
     }
-
-    /*public String AppFolderName() {
-        return "AssetsTracking";
+    public void insertasset_details(ContentValues cv)
+    {
+        sdb.insert("ASSET_DETAIL",null,cv);
     }
-
-    public String filepath(String value) {
-        File dir = new File(android.os.Environment.getExternalStorageDirectory(), AppFolderName() + File.separator + value);
-        if (!dir.exists()) {
-            dir.mkdir();
-        }
-        return dir.toString();
-    }*/
+    public Cursor getAssetsTecord()
+    {
+        Cursor data = null;
+        data = sdb.rawQuery("SELECT * FROM ASSET_DETAIL", null);
+        return data;
+    }
 }
