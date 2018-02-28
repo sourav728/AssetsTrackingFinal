@@ -1,0 +1,187 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tvd.assetstracking.InsertSuccessfulFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/txt_Product_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/txt_Product_name2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp" />
+
+        <TableLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/my_drawable">
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip"
+                    android:text="Product ID" />
+
+                <TextView
+                    android:id="@+id/txt_Product_id"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip"
+                    android:text="Brand" />
+
+                <TextView
+                    android:id="@+id/txt_Product_brand"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip"
+                    android:text="Date" />
+
+                <TextView
+                    android:id="@+id/txt_Date"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip"
+                    android:text="Category" />
+
+                <TextView
+                    android:id="@+id/txt_category"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip"
+                    android:text="Price" />
+
+                <TextView
+                    android:id="@+id/txt_Price"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip"
+                    android:text="Quantity" />
+
+                <TextView
+                    android:id="@+id/txt_Quantity"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip"
+                    android:text="Location" />
+
+                <TextView
+                    android:id="@+id/txt_Location"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_drawable"
+                    android:gravity="center"
+                    android:padding="15dip" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</ScrollView>

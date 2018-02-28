@@ -35,6 +35,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         edit = (ImageView) view.findViewById(R.id.img_edit_asset);
         addassets.setOnClickListener(this);
         edit.setOnClickListener(this);
+
+        String extra = "Check";
+
         return view;
     }
 
@@ -48,7 +51,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                // fetchallrecord();
                 getFragmentManager().beginTransaction().replace(R.id.content_frame, new editasset()).commit();
                 break;
-
         }
     }
 }
