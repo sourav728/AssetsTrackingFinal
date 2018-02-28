@@ -36,8 +36,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         addassets.setOnClickListener(this);
         edit.setOnClickListener(this);
 
-        String extra = "Check";
-
         return view;
     }
 

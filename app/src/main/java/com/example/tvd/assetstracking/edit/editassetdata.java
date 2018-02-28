@@ -6,10 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.tvd.assetstracking.HomeFragment;
 import com.example.tvd.assetstracking.MainActivity;
 import com.example.tvd.assetstracking.R;
 import com.example.tvd.assetstracking.adapters.RoleAdapter;
@@ -26,6 +28,7 @@ public class editassetdata extends Fragment {
     RoleAdapter roleAdapter;
     GetSetValues getSetValues;
     Spinner role_spiner;
+    Button save;
 
     public editassetdata() {
     }
@@ -48,6 +51,7 @@ public class editassetdata extends Fragment {
         price = (EditText) view.findViewById(R.id.edit_price);
         qty = (EditText) view.findViewById(R.id.edit_qty);
         location = (EditText) view.findViewById(R.id.edit_location);
+        save = (Button) view.findViewById(R.id.btn_save);
 
         for (int i = 0; i < getResources().getStringArray(R.array.category).length; i++) {
             getSetValues = new GetSetValues();
@@ -106,6 +110,25 @@ public class editassetdata extends Fragment {
             }
 
         }
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String edit_name = itemname.getText().toString();
+                String edit_id = productid.getText().toString();
+                String edit_brand = brand.getText().toString();
+                String edit_date = date.getText().toString();
+                String edit_details = details.getText().toString();
+                String spi_category = main_role;
+                String edit_company = company.getText().toString();
+                String edit_price = price.getText().toString();
+                String edit_qty = qty.getText().toString();
+                String edit_location = location.getText().toString();
+                database.updateasset_details(edit_name, edit_id, edit_brand, edit_date, edit_details, spi_category, edit_company, edit_price, edit_qty, edit_location);
+                Toast.makeText(getActivity(), "Records Updated Succeddfully..", Toast.LENGTH_SHORT).show();
+                getFragmentManager().beginTransaction().replace(R.id.content_frame, new HomeFragment()).commit();
+            }
+        });
         return view;
     }
 
