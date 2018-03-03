@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.tvd.assetstracking.edit.editasset">
+    tools:context="com.example.tvd.assetstracking.search.Searchsuccess">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,10 +55,56 @@
             android:textSize="15sp"
             android:textStyle="bold" />
     </LinearLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/assets_recycler_view"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#424242" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="3dp">
+
+        <TextView
+            android:id="@+id/txt_asset_id"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txt_asses_name"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txt_asses_qty"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txt_asset_price"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txt_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="View"
+            android:textColor="#f44336" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#424242" />
 
 </LinearLayout>

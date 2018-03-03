@@ -6,7 +6,7 @@ package com.example.tvd.assetstracking.other;
 
 public class GetSetValues {
     private String role;
-    private String id="",item_name="",product_id="",brand="",date="",details="",category="",company="",price="",qty="",location="";
+    private String id="",item_name="",product_id="",brand="",date="",details="",category="",company="",price="",qty="",location="",image="";
     public String getRole() {
         return role;
     }
@@ -73,6 +73,14 @@ public class GetSetValues {
 
     public String getCategory() {
         return category;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public void setCategory(String category) {

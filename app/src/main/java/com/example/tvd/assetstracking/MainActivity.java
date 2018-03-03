@@ -16,7 +16,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.tvd.assetstracking.add.addassets_fragment;
 import com.example.tvd.assetstracking.database.Database;
+import com.example.tvd.assetstracking.edit.editasset;
+import com.example.tvd.assetstracking.search.SearchFragment;
+import com.example.tvd.assetstracking.view.ViewFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,6 +28,7 @@ public class MainActivity extends AppCompatActivity
     private boolean doubleBackToExitPressedOnce = false;
     private static AppCompatActivity thisActivity;
     Database database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +60,10 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public Database getassetDatabase()
-    {
+    public Database getassetDatabase() {
         return this.database;
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -70,7 +75,7 @@ public class MainActivity extends AppCompatActivity
                 return;
             }
             doubleBackToExitPressedOnce = true;
-            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Are You Sure To Exit??", Toast.LENGTH_SHORT).show();
 
             new Handler().postDelayed(new Runnable() {
 
@@ -84,19 +89,13 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -108,8 +107,6 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-
         Fragment fragment = null;
 
         int id = item.getItemId();
@@ -126,19 +123,16 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             fragment = new HomeFragment();
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }else if  (id == R.id.action_home)
-        {
+        } else if (id == R.id.nav_insert) {
+            fragment = new addassets_fragment();
+        } else if (id == R.id.nav_edit) {
+            fragment = new editasset();
+        } else if (id == R.id.nav_search) {
+            fragment = new SearchFragment();
+        } else if (id == R.id.action_home) {
             fragment = new HomeFragment();
+        } else if (id == R.id.nav_view) {
+            fragment = new ViewFragment();
         }
         if (fragment != null) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

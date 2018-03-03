@@ -5,9 +5,9 @@
     android:orientation="vertical">
 
     <View
-        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginTop="5dp"
         android:background="#424242" />
 
     <LinearLayout
@@ -19,26 +19,26 @@
         <TextView
             android:id="@+id/txt_asset_id"
             android:layout_width="45dp"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/txt_asses_name"
             android:layout_width="108dp"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/txt_asses_qty"
             android:layout_width="58dp"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/txt_asset_price"
-            android:layout_width="116dp"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/txt_edit"
@@ -47,10 +47,11 @@
             android:gravity="center"
             android:textColor="#f44336" />
     </LinearLayout>
+
     <View
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:background="#424242" />
 </LinearLayout>

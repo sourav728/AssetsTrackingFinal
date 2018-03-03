@@ -62,6 +62,7 @@
                 android:layout_height="100dp"
                 />
             <ImageView
+                android:id="@+id/img_view"
                 android:layout_width="98dp"
                 android:layout_height="100dp"
                 android:background="@drawable/ic_view"
@@ -71,6 +72,7 @@
                 android:layout_height="100dp"
                 />
             <ImageView
+                android:id="@+id/img_search"
                 android:layout_width="98dp"
                 android:layout_height="100dp"
                 android:background="@drawable/ic_search_icon"

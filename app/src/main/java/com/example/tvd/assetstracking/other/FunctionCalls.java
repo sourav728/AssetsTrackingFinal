@@ -5,6 +5,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class FunctionCalls {
     public void logStatus(String msg) {
@@ -32,5 +35,21 @@ public class FunctionCalls {
             dir.mkdirs();
         }
         return dir.toString();
+    }
+    public String Parse_Date2(String time) {
+        String input = "yyyy-MM-d";
+        String output = "dd-MM-yyyy";
+        SimpleDateFormat inputFormat = new SimpleDateFormat(input);
+        SimpleDateFormat outputFormat = new SimpleDateFormat(output);
+
+        Date date = null;
+        String str = null;
+        try {
+            date = inputFormat.parse(time);
+            str = outputFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return str;
     }
 }

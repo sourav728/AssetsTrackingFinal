@@ -23,7 +23,7 @@ public class Database {
         try {
             databasefile = functionCalls.filestorepath(databasefolder, database_name);
             databasepath = functionCalls.filepath(databasefolder) + File.separator + database_name;
-            mh = new MyHelper(context, databasepath, null, 1);
+            mh = new MyHelper(context, databasepath, null, 2);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,7 +47,7 @@ public class Database {
         public void onCreate(SQLiteDatabase db) {
             db.execSQL("Create table ASSET_DETAIL(_id integer primary key, ITEM_NAME TEXT, PRODUCT_ID TEXT, " +
                     "BRAND TEXT, DATE TEXT, DETAILS TEXT, CATEGORY TEXT, COMPANY TEXT, PRICE TEXT, " +
-                    "QTY TEXT, LOCATION TEXT);");
+                    "QTY TEXT, LOCATION TEXT, IMAGE TEXT);");
         }
 
         @Override
@@ -65,8 +65,19 @@ public class Database {
         data = sdb.rawQuery("SELECT * FROM ASSET_DETAIL", null);
         return data;
     }
-
-    public void updateasset_details(String item_name, String product_id, String product_brand, String product_date, String product_details, String product_category, String product_company, String product_price, String product_qty, String product_location) {
+    public Cursor searchbyid()
+    {
+        Cursor c1 = null;
+        c1 = sdb.rawQuery("select PRODUCT_ID from ASSET_DETAIL",null);
+        return c1;
+    }
+    public Cursor searAllDetails(String productid)
+    {
+        Cursor c2 = null;
+        c2 = sdb.rawQuery("SELECT * FROM ASSET_DETAIL WHERE PRODUCT_ID = " + "'" + productid + "'", null);
+        return c2;
+    }
+    public void updateasset_details(String item_name, String product_id, String product_brand, String product_date, String product_details, String product_category, String product_company, String product_price, String product_qty, String product_location,String pic_name) {
         /*Cursor data = null;
         data = sdb.rawQuery("UPDATE ASSET_DETAIL SET ITEM_NAME='" + item_name + "' , PRODUCT_ID='" + product_id + "'" +
                 "BRAND='" + product_brand + "' , DATE='" + product_date + "', DETAILS='" + product_details + "'" +
@@ -85,6 +96,7 @@ public class Database {
         cv.put("PRICE",product_price);
         cv.put("QTY",product_qty);
         cv.put("LOCATION",product_location);
+        cv.put("IMAGE",pic_name);
         sdb.update("ASSET_DETAIL",cv,"PRODUCT_ID="+product_id,null);
     }
 
