@@ -18,11 +18,12 @@ import java.util.ArrayList;
 public class ViewDetailsAdapter extends RecyclerView.Adapter<ViewDetailsAdapter.ViewHolder> {
     private ArrayList<GetSetValues> arrayList = new ArrayList<>();
     private Context context;
-    public ViewDetailsAdapter(Context context, ArrayList<GetSetValues>arraylist)
-    {
+
+    public ViewDetailsAdapter(Context context, ArrayList<GetSetValues> arraylist) {
         this.arrayList = arraylist;
         this.context = context;
     }
+
     @Override
     public ViewDetailsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.asset_list, null);
@@ -67,8 +68,9 @@ public class ViewDetailsAdapter extends RecyclerView.Adapter<ViewDetailsAdapter.
         return arrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView id, name, qty, price, detail, edit;
+
         public ViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);

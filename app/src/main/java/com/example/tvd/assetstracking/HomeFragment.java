@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.tvd.assetstracking.add.addassets_fragment;
@@ -18,9 +19,10 @@ import com.example.tvd.assetstracking.view.ViewFragment;
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
-    ImageView addassets,edit,records_view,search;
+    ImageView addassets, edit, records_view, search;
     Database database;
     ArrayList<GetSetValues> arrayList = new ArrayList<>();
+    Button exel;
 
     public HomeFragment() {
     }
@@ -30,12 +32,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.demo, container, false);
-
+        getActivity().setTitle("Home");
         database = ((MainActivity) getActivity()).getassetDatabase();
         addassets = (ImageView) view.findViewById(R.id.img_add_asset);
         edit = (ImageView) view.findViewById(R.id.img_edit_asset);
         search = (ImageView) view.findViewById(R.id.img_search);
         records_view = (ImageView) view.findViewById(R.id.img_view);
+
         addassets.setOnClickListener(this);
         edit.setOnClickListener(this);
         records_view.setOnClickListener(this);
@@ -57,7 +60,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.img_search:
                 getFragmentManager().beginTransaction().replace(R.id.content_frame, new SearchFragment()).addToBackStack(null).commit();
-
         }
     }
 }

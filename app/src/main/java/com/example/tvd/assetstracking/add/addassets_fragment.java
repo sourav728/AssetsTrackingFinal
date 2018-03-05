@@ -66,6 +66,7 @@ public class addassets_fragment extends Fragment {
     String dd, date1;
     FunctionCalls functioncall;
     private int day, month, year;
+
     public addassets_fragment() {
 
     }
@@ -74,6 +75,7 @@ public class addassets_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_addassets_fragment, container, false);
+        getActivity().setTitle("Insert");
         functioncall = new FunctionCalls();
         database = ((MainActivity) getActivity()).getassetDatabase();
         role_spiner = (Spinner) view.findViewById(R.id.spin_category);
@@ -168,7 +170,7 @@ public class addassets_fragment extends Fragment {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
-                dd = (year + "-" + (month + 1) + "-"  + dayOfMonth);
+                dd = (year + "-" + (month + 1) + "-" + dayOfMonth);
                 date1 = functioncall.Parse_Date2(dd);
                 date.setText(date1);
             }
@@ -195,7 +197,7 @@ public class addassets_fragment extends Fragment {
         timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date());
         if (type == MEDIA_TYPE_IMAGE) {
             mediaFile = new File(mediaStorageDir.getPath() + File.separator + "IMG_" + timeStamp + ".jpg");
-            pic_name = "IMG_"+ timeStamp + ".jpg";
+            pic_name = "IMG_" + timeStamp + ".jpg";
         } else {
             return null;
         }
@@ -255,7 +257,7 @@ public class addassets_fragment extends Fragment {
             cv.put("PRICE", getprice);
             cv.put("QTY", getqty);
             cv.put("LOCATION", getlocation);
-            cv.put("IMAGE",pic_name);
+            cv.put("IMAGE", pic_name);
             database.insertasset_details(cv);
             return null;
         }
@@ -278,7 +280,7 @@ public class addassets_fragment extends Fragment {
             args.putString("PRICE", getprice);
             args.putString("QTY", getqty);
             args.putString("LOCATION", getlocation);
-            args.putString("IMAGE",pic_name);
+            args.putString("IMAGE", pic_name);
             insertsuccessfullfragment.setArguments(args);
             getFragmentManager().beginTransaction().replace(R.id.content_frame, insertsuccessfullfragment, null).commit();
         }

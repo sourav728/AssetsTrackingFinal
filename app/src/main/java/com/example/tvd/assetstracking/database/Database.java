@@ -65,19 +65,20 @@ public class Database {
         data = sdb.rawQuery("SELECT * FROM ASSET_DETAIL", null);
         return data;
     }
-    public Cursor searchbyid()
-    {
+
+    public Cursor searchbyid() {
         Cursor c1 = null;
-        c1 = sdb.rawQuery("select PRODUCT_ID from ASSET_DETAIL",null);
+        c1 = sdb.rawQuery("select PRODUCT_ID from ASSET_DETAIL", null);
         return c1;
     }
-    public Cursor searAllDetails(String productid)
-    {
+
+    public Cursor searAllDetails(String productid) {
         Cursor c2 = null;
         c2 = sdb.rawQuery("SELECT * FROM ASSET_DETAIL WHERE PRODUCT_ID = " + "'" + productid + "'", null);
         return c2;
     }
-    public void updateasset_details(String item_name, String product_id, String product_brand, String product_date, String product_details, String product_category, String product_company, String product_price, String product_qty, String product_location,String pic_name) {
+
+    public void updateasset_details(String item_name, String product_id, String product_brand, String product_date, String product_details, String product_category, String product_company, String product_price, String product_qty, String product_location, String pic_name) {
         /*Cursor data = null;
         data = sdb.rawQuery("UPDATE ASSET_DETAIL SET ITEM_NAME='" + item_name + "' , PRODUCT_ID='" + product_id + "'" +
                 "BRAND='" + product_brand + "' , DATE='" + product_date + "', DETAILS='" + product_details + "'" +
@@ -86,18 +87,18 @@ public class Database {
         data.moveToNext();
         data.close();*/
         ContentValues cv = new ContentValues();
-        cv.put("ITEM_NAME",item_name);
-        cv.put("PRODUCT_ID",product_id);
-        cv.put("BRAND",product_brand);
-        cv.put("DATE",product_date);
-        cv.put("DETAILS",product_details);
-        cv.put("CATEGORY",product_category);
-        cv.put("COMPANY",product_company);
-        cv.put("PRICE",product_price);
-        cv.put("QTY",product_qty);
-        cv.put("LOCATION",product_location);
-        cv.put("IMAGE",pic_name);
-        sdb.update("ASSET_DETAIL",cv,"PRODUCT_ID="+product_id,null);
+        cv.put("ITEM_NAME", item_name);
+        cv.put("PRODUCT_ID", product_id);
+        cv.put("BRAND", product_brand);
+        cv.put("DATE", product_date);
+        cv.put("DETAILS", product_details);
+        cv.put("CATEGORY", product_category);
+        cv.put("COMPANY", product_company);
+        cv.put("PRICE", product_price);
+        cv.put("QTY", product_qty);
+        cv.put("LOCATION", product_location);
+        cv.put("IMAGE", pic_name);
+        sdb.update("ASSET_DETAIL", cv, "PRODUCT_ID=" + product_id, null);
     }
 
 }

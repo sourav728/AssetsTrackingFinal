@@ -37,13 +37,11 @@ public class editasset extends Fragment {
 
 
         View view = inflater.inflate(R.layout.fragment_editasset, container, false);
-
+        getActivity().setTitle("Edit");
         database = ((MainActivity) getActivity()).getassetDatabase();
 
         arrayList = new ArrayList<>();
         recyclerView = (RecyclerView) view.findViewById(R.id.assets_recycler_view);
-
-
         assetDetailsAdapter = new AssetDetailsAdapter(getActivity(), arrayList);
         recyclerView.setAdapter(assetDetailsAdapter);
         recyclerView.setHasFixedSize(true);
@@ -76,7 +74,7 @@ public class editasset extends Fragment {
                 Log.d("Debugg", "PRICE" + cursor.getString(cursor.getColumnIndex("PRICE")));
                 Log.d("Debugg", "QTY" + cursor.getString(cursor.getColumnIndex("QTY")));
                 Log.d("Debugg", "LOCATION" + cursor.getString(cursor.getColumnIndex("LOCATION")));
-                Log.d("Debugg", "IMAGE"+ cursor.getString(cursor.getColumnIndex("IMAGE")));
+                Log.d("Debugg", "IMAGE" + cursor.getString(cursor.getColumnIndex("IMAGE")));
                 arrayList.add(getSetValues);
                 assetDetailsAdapter.notifyDataSetChanged();
             }

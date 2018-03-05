@@ -2,7 +2,6 @@ package com.example.tvd.assetstracking;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -14,11 +13,11 @@ import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.tvd.assetstracking.add.addassets_fragment;
 import com.example.tvd.assetstracking.database.Database;
 import com.example.tvd.assetstracking.edit.editasset;
+import com.example.tvd.assetstracking.exelgenerator.ExelGenerate;
 import com.example.tvd.assetstracking.search.SearchFragment;
 import com.example.tvd.assetstracking.view.ViewFragment;
 
@@ -64,29 +63,29 @@ public class MainActivity extends AppCompatActivity
         return this.database;
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            if (doubleBackToExitPressedOnce) {
-                super.onBackPressed();
-                return;
-            }
-            doubleBackToExitPressedOnce = true;
-            Toast.makeText(this, "Are You Sure To Exit??", Toast.LENGTH_SHORT).show();
+    /* @Override
+     public void onBackPressed() {
+         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+         if (drawer.isDrawerOpen(GravityCompat.START)) {
+             drawer.closeDrawer(GravityCompat.START);
+         } else {
+             if (doubleBackToExitPressedOnce) {
+                 super.onBackPressed();
+                 return;
+             }
+             doubleBackToExitPressedOnce = true;
+             Toast.makeText(this, "Are You Sure To Exit??", Toast.LENGTH_SHORT).show();
 
-            new Handler().postDelayed(new Runnable() {
+             new Handler().postDelayed(new Runnable() {
 
-                @Override
-                public void run() {
-                    doubleBackToExitPressedOnce = false;
-                }
-            }, 2000);
-        }
-    }
-
+                 @Override
+                 public void run() {
+                     doubleBackToExitPressedOnce = false;
+                 }
+             }, 2000);
+         }
+     }
+ */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -133,6 +132,8 @@ public class MainActivity extends AppCompatActivity
             fragment = new HomeFragment();
         } else if (id == R.id.nav_view) {
             fragment = new ViewFragment();
+        } else if (id == R.id.nav_exel) {
+            fragment = new ExelGenerate();
         }
         if (fragment != null) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
